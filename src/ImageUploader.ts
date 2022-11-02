@@ -1,5 +1,5 @@
 import Quill, { RangeStatic } from "quill";
-import LoadingImage from "./blots/image";
+import ImageBlot from "./blots/ImageBlot";
 
 import "./style.css";
 
@@ -12,7 +12,6 @@ class ImageUploader {
     options: quillOptions;
     range: RangeStatic | null;
     fileHolder: HTMLInputElement;
-    fileChanged: any;
 
     constructor(quill: Quill, options: quillOptions) {
         this.quill = quill;
@@ -45,6 +44,13 @@ class ImageUploader {
         window.requestAnimationFrame(() => {
             document.body.removeChild(this.fileHolder);
         })
+    }
+
+    fileChanged() {
+        if (this.fileHolder.files) {
+            const file = this.fileHolder.files[0]
+            this.readAndUpload(file)
+        }
     }
 
     handleDrop(evt: DragEvent) {
@@ -98,7 +104,6 @@ class ImageUploader {
     }
 
     readAndUpload(file: File) {
-
         let isUploadReject = false;
 
         const fileReader = new FileReader();
@@ -135,7 +140,7 @@ class ImageUploader {
         if (range?.index) {
             this.quill.insertEmbed(
                 range.index,
-                LoadingImage.blotName,
+                ImageBlot.blotName,
                 `${url}`,
                 "user"
             )
@@ -162,3 +167,5 @@ class ImageUploader {
         }
     }
 }
+
+export default ImageUploader;
