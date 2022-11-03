@@ -8,6 +8,12 @@
 ![Image of Yaktocat](/static/quill-example.gif)
 
 ## Usage: 
+First install on npm:
+```bash
+    npm i quill-image-uploader-ts
+```
+
+then configure it on your project like so:
 ```
 import Quill from "quill";
 import ImageUploader from "ImageUploader";
