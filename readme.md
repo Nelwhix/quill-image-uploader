@@ -14,7 +14,7 @@ First install on npm:
 ```
 
 then configure it on your project like so:
-```
+```js
 import Quill from "quill";
 import ImageUploader from "ImageUploader";
 
