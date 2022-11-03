@@ -5,6 +5,12 @@
   "scripts": {
     "test": "vitest"
   },
+  "keywords": [
+    "quill",
+    "quilljs",
+    "image",
+    "upload"
+  ],
   "author": "Nelson Isioma",
   "license": "ISC",
   "dependencies": {
