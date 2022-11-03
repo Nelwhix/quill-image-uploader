@@ -1,6 +1,6 @@
 {
   "name": "quill-image-uploader-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A TS library to upload images in the quill editor to the server instead of being base64 encoded",
   "scripts": {
     "test": "vitest"

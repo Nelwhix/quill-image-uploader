@@ -4,7 +4,7 @@ import ImageBlot from "./blots/ImageBlot";
 import "./style.css";
 
 type quillOptions = {
-    upload: Function;
+    upload: (file: File) => Promise<string>;
 }
 
 class ImageUploader {
