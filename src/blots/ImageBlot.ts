@@ -1,7 +1,8 @@
 import Quill from "quill";
-import Parchment from 'parchment'
 
-class ImageBlot extends Parchment.Block {
+const InlineBlot = Quill.import("blots/block");
+
+class ImageBlot extends InlineBlot {
     static blotName = "imageBlot";
     static className = "image-uploading";
     static tagName = "span";
@@ -16,6 +17,11 @@ class ImageBlot extends Parchment.Block {
 
     deleteAt(index: number, length: number) {
         super.deleteAt(index, length);
+    }
+
+    static value(domNode: HTMLElement) {
+        const { src, custom } = domNode.dataset
+        return { src, custom};
     }
 }
 

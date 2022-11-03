@@ -4,8 +4,34 @@
 * images inserted using the toolbar
 * images copy/pasted from the clipboard
 
-## Usage: WIP
+## Demo
+![Image of Yaktocat](/static/quill-example.gif)
 
+## Usage: 
+```
+import Quill from "quill";
+import ImageUploader from "ImageUploader";
+
+Quill.register("modules/imageUploader", ImageUploader);
+
+const quill = new Quill(editor, {
+  // ...
+  modules: {
+    // ...
+    imageUploader: {
+      upload: (file) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png"
+            );
+          }, 3500);
+        });
+      },
+    },
+  },
+});
+```
 
 ## Inspiration
 This library is a typescript port of [quill-image-uploader](https://github.com/NoelOConnell/quill-image-uploader). It seems the package is currently not maintained.
