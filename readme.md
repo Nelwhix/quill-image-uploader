@@ -40,4 +40,4 @@ const quill = new Quill(editor, {
 ```
 
 ## Inspiration
-This library is a typescript port of [quill-image-uploader](https://github.com/NoelOConnell/quill-image-uploader). It seems the package is currently not maintained.
+This library is a typescript port of [quill-image-uploader](https://github.com/NoelOConnell/quill-image-uploader).
